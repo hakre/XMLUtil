@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fakedoctype SYSTEM "fake_doc_type.dtd">
+
+<!--
+This is a comment, it's here to try and get the parser to break in some way
+-->
+
+<root attribute="value" otherattribute="othervalue"></root>

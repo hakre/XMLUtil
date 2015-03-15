@@ -11,6 +11,9 @@
             "homepage": "http://hakre.wordpress.com/"
         }
     ],
+    "suggest": {
+        "ext-iconv": "*"
+    },
     "autoload": {
         "classmap": ["src/"]
     },
