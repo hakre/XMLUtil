@@ -12,3 +12,14 @@ user-input given.
 
 - [PHP XMLReader, get the version and encoding](http://stackoverflow.com/a/15495409/367456)
 - [Read specific character from xml file to a php file](http://stackoverflow.com/a/18896665/367456)
+
+
+### XMLDSig
+
+The DSig module is for XML digital signature processing.
+
+The class [`XMLDSig`](src/DSig/XMLDSig.php) offers a high-level interface. Right now it covers digest handling.
+
+#### Examples and Resources
+
+- [Is that what exactly does the enveloped signature transform?](http://stackoverflow.com/q/24961073/367456)

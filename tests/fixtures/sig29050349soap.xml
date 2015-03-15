@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><s:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://www.w3.org/2003/05/soap-envelope"><s:Body><PodpisaniDokument xmlns="http://www.sigen.si/PodpisaniDokument">
+    <Predstavitve><Predstavitev Id="MyVisualisation2" xmlns="http://www.sigen.si/PodpisaniDokument"><Podatki ca="SIGEN-CA" dsPodjetja="" dsUporabnika="12345678" emso="1212912500444" maticna="" serial="2462933412018"/></Predstavitev></Predstavitve><ds:Signature Id="ClientSignature" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" ><ds:SignedInfo Id="SignedInfo-A336B1A7-C674-11E4-B412-70F39514B715"><ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><ds:Reference URI="#MyVisualisation2"><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>tmLGK3IVc1mC/r5ScUKXQ46wcCA=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue Id="SignatureValue-A336B1A8-C674-11E4-B412-70F39514B715">bHMSOqNEdlzOX/O9OLwJrXs36vDKVzBasQwFJPOqJRAjlaNDJFSCFk9o/yTiekUPQPBz0u2Y1fuJ
+    BIRR0mWF4cTtcTX7cNaTfD/oAHjfLaqVEbrVcB4rJvgZWLTwOtA7Wt7ZGhSTDGgcoACweBMYQTzI
+    xwSI+IKnm57rDlp/38PAz7CjJnMPbIEJ+aAXARmIFZfl5lHGUj9P7k6KAg/EhdjWL+IX9jTb1stn
+    iqnmalsq+25rIBE+a/+yAws0j+6vjHpjkGj8pZ4gGQ5TivG3Inu3PmSvQ/KczEVNE38jkdHKA0b5
+    lqxQ6hhcI8EeWsm1vOSwKKd1Z++eYVgZF+sIig==</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIFazCCBFOgAwIBAgIFAI0SJoowDQYJKoZIhvcNAQEFBQAwPjELMAkGA1UEBhMCc2kxGzAZ
+    BgNVBAoTEnN0YXRlLWluc3RpdHV0aW9uczESMBAGA1UECxMJc2l0ZXN0LWNhMB4XDTE1MDMw
+    OTE1MTIzMFoXDTIwMDMxMDA5MTgzNFowgYYxCzAJBgNVBAYTAnNpMRswGQYDVQQKExJzdGF0
+    ZS1pbnN0aXR1dGlvbnMxEjAQBgNVBAsTCVNJVEVTVC1DQTEZMBcGA1UECxMQY2VydGlmaWNh
+    dGVzLXdlYjErMBEGA1UEAxMKVG9tYXogVGVzdDAWBgNVBAUTD0JBMzEwMTIwMDgwMDAwMTCC
+    ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAN8dLOb2FmTOu2AVF84j6AcAfECSS4wZ
+    TSIRvKqOp8iEyumT2uaJhA2RkQnJYIKA6eVNoVgmSbxI0wXLxM+wHgqndgeFUd9tV47nICwe
+    e5k5zokXEentMcHIfzSxKxHOSDwMn9k3SstjzJRbwaPelhoMm9Q9OuAQ1xVopR/lbbpcrREp
+    8d1c6xjIftibAlDSqdUgQC639XPLfc8iAVczf4BkswBYSbHuRX5fFtmNQVzAbEzoODN9rETB
+    cRY5ugso+GPIVRgnsyDh2D5BHbrEvtKy9PI1QYUyEVYh+TdStMYB4UolhfrblrOzB9uGGc2J
+    7D6vViNsvsv/4gjE9UPOhTUCAwEAAaOCAiUwggIhMA4GA1UdDwEB/wQEAwIFoDBLBgNVHSAE
+    RDBCMDYGCysGAQQBr1kCAQECMCcwJQYIKwYBBQUHAgEWGWh0dHA6Ly93d3cuY2EuZ292LnNp
+    L2Nwcy8wCAYGBACLMAECMBgGCCsGAQUFBwEDBAwwCjAIBgYEAI5GAQEwHAYDVR0RBBUwE4ER
+    dG9tYXoudGVzdEBnb3Yuc2kwgfYGA1UdHwSB7jCB6zBVoFOgUaRPME0xCzAJBgNVBAYTAnNp
+    MRswGQYDVQQKExJzdGF0ZS1pbnN0aXR1dGlvbnMxEjAQBgNVBAsTCXNpdGVzdC1jYTENMAsG
+    A1UEAxMEQ1JMNDCBkaCBjqCBi4ZYbGRhcDovL3g1MDAuZ292LnNpL291PXNpdGVzdC1jYSxv
+    PXN0YXRlLWluc3RpdHV0aW9ucyxjPXNpP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3Q/YmFz
+    ZYYvaHR0cDovL3d3dy5zaWdlbi1jYS5zaS9jcmwvc2l0ZXN0L3NpdGVzdC1jYS5jcmwwKwYD
+    VR0QBCQwIoAPMjAxNTAzMDkxNTEyMzBagQ8yMDIwMDMxMDA5MTgzNFowHwYDVR0jBBgwFoAU
+    VEkHRofPHYmdyq5yp6igoGm3IecwHQYDVR0OBBYEFBgdW9B0FQo7LlSRBm6HUTmFhb+QMAkG
+    A1UdEwQCMAAwGQYJKoZIhvZ9B0EABAwwChsEVjguMQMCA6gwDQYJKoZIhvcNAQEFBQADggEB
+    ABNxpEdvRXtlPfSmFrJH4yRHykUVyNTipWq8FIgqiHhEh/ugkw33/JD3c3za5bxSu06sqnBW
+    HPD3EFTHRxBEiVOeoyfKs98X3Q+p0OqFQfhJEkq7kid6yG80/+5SIzG5VsJpytogzU2cLC67
+    0xH6IqZDbq3IPDUNxFUFJWlPlcp6Hj6Z6JpmACX4mT2F8RMWW5HEH3ymuI73ULALDVCa2Lj1
+    ok63q/ue3QAMlcWbE5CXKNG+l/4rEoP6+zDxjMQ5diC7Bz3lo1yiBoFSeUAvEp94HiUnPuz6
+    8C1IW3i+Pz/UTyfr2o2k9pV/IP76oh42eefQ+kvLM1MLxA/c7XmtHlY=</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature></PodpisaniDokument></s:Body></s:Envelope>

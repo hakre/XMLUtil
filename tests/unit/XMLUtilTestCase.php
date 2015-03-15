@@ -31,6 +31,48 @@ abstract class XMLUtilTestCase extends PHPUnit_Framework_TestCase
      * @return string
      */
     protected function getFixtureString($name) {
+
+        if (strpos($name, '#', 1)) {
+            return $this->getFixtureStringArray($name);
+        }
+
+        return $this->getFixtureStringFile($name);
+    }
+
+    /**
+     * @param $name
+     * @return DOMDocument
+     */
+    protected function getFixtureDoc($name) {
+        $xml = $this->getFixtureString($name);
+        $doc = new DOMDocument();
+        $doc->loadXML($xml);
+        return $doc;
+    }
+
+    private function getFixtureStringArray($name) {
+        list($phpFile, $key) = explode('#', $name, 2);
+
+        $filename = __DIR__ . '/../fixtures/' . basename($phpFile);
+        if (!is_readable($filename)) {
+            throw new UnexpectedValueException(
+                sprintf("Unable to load fixture file %s from file %s", var_export($phpFile, true), var_export($filename, true))
+            );
+        }
+
+        $array = include $filename;
+
+        if (!isset($array[$key])) {
+            throw new UnexpectedValueException(
+                sprintf("Unable to load fixture %s from file %s", var_export($name, true), var_export($filename, true))
+            );
+        }
+
+        return $array[$key];
+    }
+
+    private function getFixtureStringFile($name) {
+
         $filename = __DIR__ . '/../fixtures/' . basename($name);
         if (!is_readable($filename) or false === $buffer = file_get_contents($filename)) {
             throw new UnexpectedValueException(

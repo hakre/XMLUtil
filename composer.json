@@ -13,6 +13,7 @@
     ],
     "suggest": {
         "ext-iconv": "*"
+      , "ext-hash": "*"
     },
     "autoload": {
         "classmap": ["src/"]
@@ -20,6 +21,7 @@
     "autoload-dev": {
         "classmap": [
             "tests/unit/XMLUtilTestCase.php"
+          , "tests/unit/DSig/XMLDSigAlgorithmStub.php"
         ]
     },
     "require-dev": {
