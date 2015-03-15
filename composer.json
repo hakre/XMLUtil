@@ -1,0 +1,25 @@
+{
+    "name": "hakre/xmlutil",
+    "description": " Utility Classes for XML Standard Applications in PHP",
+    "keywords": ["XML"],
+    "homepage": "https://github.com/hakre/XMLUtil",
+    "minimum-stability": "stable",
+    "license": "AGPL-3.0",
+    "authors": [
+        {
+            "name": "hakre",
+            "homepage": "http://hakre.wordpress.com/"
+        }
+    ],
+    "autoload": {
+        "classmap": ["src/"]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/unit/XMLUtilTestCase.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}
