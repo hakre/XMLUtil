@@ -14,6 +14,11 @@ user-input given.
 - [Read specific character from xml file to a php file](http://stackoverflow.com/a/18896665/367456)
 
 
+### XMLErrors
+
+Representation and visualisation of LibXMLError objects.
+
+
 ### XMLDSig
 
 The DSig module is for XML digital signature processing.

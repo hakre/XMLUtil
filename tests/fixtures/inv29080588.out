@@ -1,0 +1,20 @@
+#001    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"␊
+#002                   xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">␊
+#003        <soap:Body>␊
+#004            <Consult Localitation xmlns="Services/">␊
+[FATAL]                             ^- (41) Specification mandate value for attribute Localitation (4:29)
+[FATAL]                             ^- (65) attributes construct error (4:29)
+[FATAL]                             ^- (73) Couldn't find end of Start Tag Consult line 4 (4:29)
+#005                <XMLin>␊
+#006                    &lt;ConsultXMLin Language=&quot;1&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;␊
+#007                    &lt;Consult&gt;␊
+#008                    &lt;Code&gt;XXXXX0700005020128012D&lt;/Code&gt;␊
+#009                    &lt;/Consult&gt;␊
+#010                    &lt;/ConsultXMLin&gt;</XMLin>␊
+#011            </Consult Localitation></soap:Body>␊
+[FATAL]                  ^                        ^- (76) Opening and ending tag mismatch: Envelope line 1 and Body (11:43)
+[FATAL]                  ^- (73) expected '>' (11:18)
+[FATAL]                  ^- (76) Opening and ending tag mismatch: Body line 3 and Consult (11:18)
+#012    </soap:Envelope>␊
+[FATAL] ^- (5) Extra content at the end of the document (12:1)
+#013    ␊

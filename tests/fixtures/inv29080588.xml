@@ -1,0 +1,12 @@
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <Consult Localitation xmlns="Services/">
+            <XMLin>
+                &lt;ConsultXMLin Language=&quot;1&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+                &lt;Consult&gt;
+                &lt;Code&gt;XXXXX0700005020128012D&lt;/Code&gt;
+                &lt;/Consult&gt;
+                &lt;/ConsultXMLin&gt;</XMLin>
+        </Consult Localitation></soap:Body>
+</soap:Envelope>

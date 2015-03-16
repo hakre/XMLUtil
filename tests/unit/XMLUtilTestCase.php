@@ -27,6 +27,11 @@
 abstract class XMLUtilTestCase extends PHPUnit_Framework_TestCase
 {
     /**
+     * @var array|LibXMLError[]|null
+     */
+    private $lastLoadErrors;
+
+    /**
      * @param $name
      * @return string
      */
@@ -44,10 +49,21 @@ abstract class XMLUtilTestCase extends PHPUnit_Framework_TestCase
      * @return DOMDocument
      */
     protected function getFixtureDoc($name) {
-        $xml = $this->getFixtureString($name);
-        $doc = new DOMDocument();
+        $xml   = $this->getFixtureString($name);
+        $doc   = new DOMDocument();
+        $saved = libxml_use_internal_errors(true);
         $doc->loadXML($xml);
+        $this->lastLoadErrors = libxml_get_errors();
+        libxml_use_internal_errors($saved);
+
         return $doc;
+    }
+
+    /**
+     * @return array|LibXMLError[]|null
+     */
+    protected function getLastFixtureErrors() {
+        return $this->lastLoadErrors;
     }
 
     private function getFixtureStringArray($name) {
