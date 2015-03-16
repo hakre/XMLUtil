@@ -104,6 +104,14 @@ class XMLDSigTest extends XMLUtilTestCase
     /**
      * @test
      */
+    public function example18848187()
+    {
+        $this->markTestSkipped('more fuzzle data from http://stackoverflow.com/q/18848187/367456 - different digest as well as with transform enveloped-signature');
+    }
+
+    /**
+     * @test
+     */
     public function referencing() {
 
         $prefix = 'sig29050349';
