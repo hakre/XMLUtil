@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This document contains some of the XML features
+-->
+<root xmlns:prefix="uri:for-prefix">
+    <element attribute="value">
+
+        TextNode
+
+        <?processing processing instruction content ?>
+
+        <children>&amp;&#x65;nt&#105;ty;</children>
+        <children><![CDATA[Cdata Node]]></children>
+        <children>Plain and <![CDATA[Cdata]]></children>
+        <children/>
+
+    </element>
+</root>
