@@ -29,6 +29,24 @@
 abstract class SXML
 {
     /**
+     * appends the XML as children to parent
+     *
+     * @param SimpleXMLElement $parent
+     * @param string           $xml
+     */
+    public static function appendXML(SimpleXMLElement $parent, $xml) {
+        $self = dom_import_simplexml($parent);
+        $doc  = $self->ownerDocument;
+
+        $fragment = $doc->createDocumentFragment();
+        $fragment->appendXML($xml);
+
+        while ($child = $fragment->firstChild) {
+            $self->appendChild($child);
+        }
+    }
+
+    /**
      * Cast a SimpleXMLElement to the type of another
      *
      * @param string|SimpleXMLElement $className
