@@ -84,6 +84,10 @@ abstract class SXML
             return null;
         }
 
+        if ($node instanceof DOMDocumentFragment) {
+            return null;
+        }
+
         if ($node instanceof DOMAttr) {
             $element = simplexml_import_dom($node->parentNode, $class);
 

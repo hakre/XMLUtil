@@ -48,4 +48,16 @@ class SimpleXMLElementTest extends XMLUtilTestCase
         $result = simplexml_import_dom($doc->documentElement, $object);
         $this->assertInstanceOf($object, $result);
     }
+
+    /**
+     * @test if DOMFragment can be imported into simplexml
+     * @expectedException PHPUnit_Framework_Error_Warning
+     * @expectedExceptionMessage simplexml_import_dom(): Invalid Nodetype to import
+     */
+    public function importFragment() {
+        $doc      = new DOMDocument();
+        $fragment = $doc->createDocumentFragment();
+        $fragment->appendXML('<test/>');
+        simplexml_import_dom($fragment);
+    }
 }
