@@ -112,7 +112,7 @@ abstract class SXML
             return false;
         }
 
-        return self::importDOMNode($parent, dom_import_simplexml($element));
+        return self::appendDOMNode($parent, dom_import_simplexml($element));
     }
 
     /**
@@ -124,7 +124,7 @@ abstract class SXML
      *
      * @throws DOMException
      */
-    public static function importDOMNode(SimpleXMLElement $parent, DOMNode $node) {
+    public static function appendDOMNode(SimpleXMLElement $parent, DOMNode $node) {
 
         if ($node instanceof DOMDocumentType) {
             trigger_error('dropped a DTD');
@@ -176,7 +176,7 @@ abstract class SXML
         $first = false;
 
         foreach ($nodes as $node) {
-            $added = self::importDOMNode($parent, $node);
+            $added = self::appendDOMNode($parent, $node);
             if ($added !== false && !$count++) {
                 $first = $added;
             }

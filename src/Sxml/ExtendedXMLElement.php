@@ -50,7 +50,7 @@ class ExtendedXMLElement extends SimpleXMLElement implements Countable
             return false;
         }
 
-        return SXML::importDOMNode($this, $import);
+        return SXML::appendDOMNode($this, $import);
     }
 
     /**

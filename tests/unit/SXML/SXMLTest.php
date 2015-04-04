@@ -127,14 +127,14 @@ class SXMLTest extends XMLUtilTestCase
         $yml = new SimpleXMLElement('<child><grandchild/></child>');
 
         // DOMElement in same document
-        $result = SXML::importDOMNode($xml, dom_import_simplexml($xml->parent));
+        $result = SXML::appendDOMNode($xml, dom_import_simplexml($xml->parent));
         $class  = get_class($xml);
         $this->assertInstanceOf($class, $result);
         $this->assertFalse($xml == $result);
         $this->assertCount(2, $xml->xpath('//parent'));
 
         // DOMElement in a different document
-        $result = SXML::importDOMNode($xml->parent[1], dom_import_simplexml($yml));
+        $result = SXML::appendDOMNode($xml->parent[1], dom_import_simplexml($yml));
         $this->assertInstanceOf($class, $result);
         $this->assertInstanceOf($class, $xml->parent->child);
         $this->assertNull($xml->parent->child->grandchild);
@@ -151,7 +151,7 @@ class SXMLTest extends XMLUtilTestCase
 
         // DOMDocument into the same document
         $doc    = dom_import_simplexml($xml)->ownerDocument;
-        $result = SXML::importDOMNode($xml, $doc);
+        $result = SXML::appendDOMNode($xml, $doc);
         $this->assertInstanceOf($class, $result);
         $this->assertEquals('doc', $result->getName());
         list($parent) = $result->xpath('..');
@@ -162,7 +162,7 @@ class SXMLTest extends XMLUtilTestCase
         $doc = $this->getFixtureDoc('features.xml');
 
         $xml = new SimpleXMLElement('<doc/>');
-        SXML::importDOMNode($xml, $doc);
+        SXML::appendDOMNode($xml, $doc);
         $out = $xml->asXML();
         $this->assertStringStartsWith("<?xml version=\"1.0\"?>\n<doc><!--\n    This document contains some of the XML features\n--><root xmlns:prefix=\"uri:for-prefix\">", $out);
         $this->assertEquals("TextNode", trim($xml->root->element));
@@ -180,7 +180,7 @@ class SXMLTest extends XMLUtilTestCase
         $fragment = $doc->createDocumentFragment();
         $fragment->appendXML('<child>1</child><child>2</child><child>3</child>');
 
-        $result = SXML::importDOMNode($xml, $fragment);
+        $result = SXML::appendDOMNode($xml, $fragment);
         $this->assertInstanceOf('SimpleXMLElement', $result);
         $this->assertEquals("child", $result->getName());
     }
@@ -196,7 +196,7 @@ class SXMLTest extends XMLUtilTestCase
         $comment = $doc->childNodes->item(0);
         $this->assertInstanceOf('DOMComment', $comment);
 
-        $result = SXML::importDOMNode($xml, $comment);
+        $result = SXML::appendDOMNode($xml, $comment);
         $this->assertNull($result);
         $this->assertEquals("<?xml version=\"1.0\"?>\n<doc><!--\n    This document contains a variety of XML features\n--></doc>\n", $xml->asXML());
 
@@ -208,7 +208,7 @@ class SXMLTest extends XMLUtilTestCase
         $this->assertInstanceOf('DOMDocumentType', $dtd);
 
         $this->allowErrors(function () use (&$result, $xml, $dtd) {
-            $result = SXML::importDOMNode($xml, $dtd);
+            $result = SXML::appendDOMNode($xml, $dtd);
         }, array('type' => 1024, 'message' => 'dropped a DTD'));
 
         $this->assertFalse($result);
@@ -217,7 +217,7 @@ class SXMLTest extends XMLUtilTestCase
 
         // DTD (same document)
         $this->allowErrors(function () use (&$result, $doc, $dtd) {
-            $result = SXML::importDOMNode(simplexml_import_dom($doc), $dtd);
+            $result = SXML::appendDOMNode(simplexml_import_dom($doc), $dtd);
         }, array('type' => 1024, 'message' => 'dropped a DTD'));
 
         $this->assertFalse($result);
@@ -227,7 +227,7 @@ class SXMLTest extends XMLUtilTestCase
         $entity = $doc->createEntityReference('entity');
         $this->assertInstanceOf('DOMEntityReference', $entity);
 
-        $result = SXML::importDOMNode($xml, $entity);
+        $result = SXML::appendDOMNode($xml, $entity);
 
         $this->assertNull($result);
         $this->assertEquals("<?xml version=\"1.0\"?>\n<doc>&entity;</doc>\n", $xml->asXML());
@@ -241,7 +241,7 @@ class SXMLTest extends XMLUtilTestCase
         $this->assertInstanceOf('DOMCharacterData', $cdata);
         $this->assertInstanceOf('DOMCdataSection', $cdata);
 
-        $result = SXML::importDOMNode($xml, $cdata);
+        $result = SXML::appendDOMNode($xml, $cdata);
         $this->assertNull($result);
         $this->assertEquals("<?xml version=\"1.0\"?>\n<doc><![CDATA[Cdata Node]]></doc>\n", $xml->asXML());
 
@@ -252,7 +252,7 @@ class SXMLTest extends XMLUtilTestCase
         $this->assertInstanceOf('DOMCharacterData', $text);
         $this->assertInstanceOf('DOMText', $text);
 
-        $result = SXML::importDOMNode($xml, $text);
+        $result = SXML::appendDOMNode($xml, $text);
         $this->assertNull($result);
         $this->assertEquals("<?xml version=\"1.0\"?>\n<doc>Text</doc>\n", $xml->asXML());
 
